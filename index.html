@@ -4,22 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>FOCUS</title>
   </head>
   <body>
     <header class="header">
-      <div class="header-container">Welcome to focuser</div>
+      <div class="header-container">
+        <div class="header-container_title"><h1 class="header-title">Welcome to focus</h1>
+          <button id="focuser-icon-btn"><img src="images/focuser-icon.png" alt="focuser-icon" class="focuser-icon"></button>
+        </div>
+        <div class="header-buttons"><button id="moon-btn"><img class="btn-img" src="images/moon-icon.png" alt="moon-icon"></button>
+          <button id="sun-btn"><img class="btn-img" src="images/sun-icon.png" alt="sun-icon"></button>
+        </div>
+      </div>
     </header>
     <main class="main">
       <!-- Titles -->
-      <div class="main-container" id="main-container">
+      <div  id="main-container">
         <p id="work" class="main-container_label">Work:</p>
         <p id="break" class="main-container_label">Break:</p>
         <p id="cycles" class="main-container_label">Cycles:</p>
         <!-- Work Timer -->
         <div id="work-timer" class="timer">
           <p id="w-minutes">25</p>
-          <p class="semicolon">:</p>
+          <p class="semicolon" id="semicolon1">:</p>
           <p id="w-seconds">00</p>
         </div>
 
@@ -29,7 +36,7 @@
         <!-- Break Timer -->
         <div id="break-timer" class="timer">
           <p id="b-minutes">5</p>
-          <p class="semicolon">:</p>
+          <p class="semicolon" id="semicolon2">:</p>
           <p id="b-seconds">00</p>
         </div>
 
@@ -38,16 +45,28 @@
         <button id="reset-btn" class="main-btn">Reset</button>
       </div>
 
-      <div class="main-todobox">
-        <div class="box">
-          <h2 class="todo-header">TO-DO LIST</h2>
-          <input id="inputField" type="text" placeholder="Write here..." /><button id="addTodo">+</button>
-          <div id="toDoContainer" class="to-dos"></div>
+      <!-- To Do Option 2 -->
+      <div class="container" >
+        <div class="todo-app" id="toDo-container">
+          <h2 id="toDo-title">To-Do List <img src="images/icon.png" alt="icon" /></h2>
+          <div class="row">
+            <input
+              type="text"
+              name=""
+              id="input-box"
+              placeholder="Write here..."
+            />
+            <button id="todo-btn">Add</button>
+          </div>
+          <ul id="list-container"></ul>
         </div>
       </div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <h1>Hi i am footer</h1>
+    </footer>
 
     <script src="script.js"></script>
+    <script src="script2.js"></script>
   </body>
 </html>

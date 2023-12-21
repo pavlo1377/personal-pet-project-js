@@ -29,7 +29,7 @@ reset.addEventListener("click", function () {
   bmin.innerText = 5;
   bsec.innerText = "00";
 
-  counter = 0;
+  counter.innerText = 0;
   stopInterval();
   startTimer = undefined;
 });
@@ -79,33 +79,76 @@ function stopInterval() {
   clearInterval(startTimer);
 }
 
-// To do script
-let addTodoBtn = document.querySelector("#addTodo");
-let inputField = document.querySelector("#inputField");
-let toDoContainer = document.querySelector("#toDoContainer");
-// добавляє в список коли нажимаєш enter
-inputField.addEventListener("keyup", function (event) {
-  if (event.key == "Enter") {
-    let paragraph = document.createElement("p");
-    paragraph.classList.add("paragraph-styling"); // Corrected the class name
-    toDoContainer.appendChild(paragraph);
-    paragraph.innerText = inputField.value;
-    inputField.value = "";
+// Moon button change
+const moonBtn = document.querySelector("#moon-btn");
+const workParagraph = document.querySelector("#work");
+const breakParagraph = document.querySelector("#break");
+const cyclesParagraph = document.querySelector("#cycles");
+const semiColon1 = document.querySelector("#semicolon1");
+const semiColon2 = document.querySelector("#semicolon2");
+const mainContainer = document.querySelector("#main-container");
+const toDoContainer = document.querySelector("#toDo-container");
+const toDoTitle = document.querySelector("#toDo-title");
+const headerContainer = document.querySelector(".header-container");
+const headerTitle = document.querySelector(".header-title");
 
-    paragraph.addEventListener("click", function () {
-      paragraph.style.textDecoration = "line-through";
-    });
+moonBtn.addEventListener("click", function () {
+  document.body.style.backgroundColor = "#151111";
 
-    paragraph.addEventListener("dblclick", function () {
-      toDoContainer.removeChild(paragraph);
-    });
-  }
+  workParagraph.style.color = "white";
+  breakParagraph.style.color = "white";
+  cyclesParagraph.style.color = "white";
+  moonBtn.style.border = "3px solid #580bd2";
+  sunBtn.style.border = "2px solid black";
+
+  semiColon1.style.color = "white";
+  semiColon2.style.color = "white";
+
+  wmin.style.color = "white";
+  wsec.style.color = "white";
+  bmin.style.color = "white";
+  bsec.style.color = "white";
+
+  mainContainer.style.backgroundColor = "#1c1b1b";
+  toDoContainer.style.backgroundColor = "#1c1b1b";
+
+  toDoTitle.style.color = "white";
+  headerContainer.style.backgroundColor = "#1c1b1b";
+  headerTitle.style.color = "white";
+  focuserIcon.style.backgroundColor = "#1c1b1b";
 });
-//  добавляє в список коли нажимаєш н а+
-addTodoBtn.addEventListener("click", function () {
-  let paragraph = document.createElement("p");
-  paragraph.classList.add("paragraph-styling");
-  paragraph.innerText = inputField.value;
-  toDoContainer.appendChild(paragraph);
-  inputField.value = "";
+
+// Sun button change
+
+const sunBtn = document.querySelector("#sun-btn");
+
+sunBtn.addEventListener("click", function () {
+  document.body.style.backgroundColor = "#ede6e6";
+  workParagraph.style.color = "black";
+  breakParagraph.style.color = "black";
+  cyclesParagraph.style.color = "black";
+  sunBtn.style.border = "3px solid #ead409";
+  moonBtn.style.border = "2px solid black";
+
+  semiColon1.style.color = "black";
+  semiColon2.style.color = "black";
+
+  wmin.style.color = "black";
+  wsec.style.color = "black";
+  bmin.style.color = "black";
+  bsec.style.color = "black";
+
+  mainContainer.style.backgroundColor = "#fff";
+  toDoContainer.style.backgroundColor = "#fff";
+
+  toDoTitle.style.color = "black";
+  headerContainer.style.backgroundColor = "#f0f0f0";
+  headerTitle.style.color = "black";
+  focuserIcon.style.backgroundColor = "#f0f0f0";
+});
+
+// reload button
+const focuserIcon = document.querySelector("#focuser-icon-btn");
+focuserIcon.addEventListener("click", function () {
+  window.location.reload();
 });

@@ -1,44 +1,98 @@
 html {
-  height: 100%;
+  height: 500px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
   /* display: flex; */
   justify-content: center;
   align-items: center;
-  
+  background-color: #ede6e6; /* змінено на нейтральний фоновий колір */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Timer styles */
-.header-container{
+.header-container {
   height: 40px;
-  width: 1200px;
+  width: 1000px;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center; /* оновлено на align-items */
   margin: 10px auto;
-  border: 2px solid ;
+  border: 2px solid;
+  border-radius: 40px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin-bottom: 100px;
+}
+.header-container_title {
+  display: flex;
+  text-align: center;
+}
+#focuser-icon-btn{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+#moon-btn {
+  border-radius: 30%;
+  cursor: pointer;
+  
+}
+#sun-btn {
+  border-radius: 30%;
+  cursor: pointer;
+
+  
+}
+.btn-img {
+  height: 30px;
+  width: 30px;
 }
 
 
+.header-title {
+  margin: auto; /* оновлено margin */
+  font-size: 18px; /* збільшено розмір шрифту */
+  font-weight: bold;
+  color: #333; /* колір тексту */
+  margin-left: 20px;
+}
+.header-buttons{
+  margin-right: 20px;
+}
+
+.focuser-icon {
+  height: 40px;
+  width: 40px;
+  padding: auto;
+  margin-left: 15px;
+}
 
 #main-container {
-  height: 200px;
-  width: 700px;
-  background-color: cornsilk;
+  height: 300px;
+  width: 950px;
+  background-color: #fff;
   margin: 0 auto;
-  border: 5px solid #000;
+  /* border: 5px solid #000; */
+  border-radius: 20px;
+  border: none;
+  outline: none;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  transition: background-color 0.5s ease;
 }
 .main-container_label {
   align-self: center;
   justify-self: center;
 
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
 }
 #work {
@@ -56,7 +110,7 @@ body{
   align-self: center;
   justify-self: center;
 
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
 }
 p {
@@ -67,6 +121,11 @@ p {
 #counter {
   grid-area: 2 / 3 / 2 / 3;
   color: red;
+  font-weight: bold;
+  font-size: 40px;
+  position: relative;
+  top: 32px;
+  left: 85px;
 }
 #work-timer {
   grid-area: 2 / 2 / 2 / 2;
@@ -83,79 +142,167 @@ p {
   width: 100px;
   height: 30px;
 
-  font-size: 20px;
+  font-size: 22px;
+  padding: 2px;
 }
 
 #start-btn {
   grid-area: 3 / 2 / 3 / 2;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #4caf50; /* змінено на зелений */
+  color: #fff; /* білий текст для контрастності */
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  height: 50px;
+  width: 100px;
 }
 #reset-btn {
   grid-area: 3 / 3 / 3 / 3;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #3498db; /* змінено на синій */
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  height: 50px;
+  width: 100px;
 }
 #stop-btn {
   grid-area: 3 / 4 / 3 / 4;
-}
-
-
-/* To do list styles */
-
-.main-todobox{
-  margin: 10px 45%;
-  /* display: ; */
-  width: 360px;
-}
-#inputField{
-  position: relative;
-  width: 85%;
-  height: 26px;
-  outline: none;
-  font-size: 15px; 
+  border-radius: 20px;
   border: none;
-  padding: 15px 20px;
-  border-radius: 30px;
-  box-shadow: 5px 5px 7px rgba(0,0,0,0.25);
+  outline: none;
+  cursor: pointer;
+  background-color: #e74c3c; /* змінено на червоний */
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  height: 50px;
+  width: 100px;
+}
+#start-btn:hover {
+  background-color: #45a049;
 }
 
+#reset-btn:hover {
+  background-color: #2980b9;
+}
 
+#stop-btn:hover {
+  background-color: #c0392b;
+}
 
-#paragraph{
-  width: 75%;
-  position: relative;
+#start-btn:active,
+#reset-btn:active,
+#stop-btn:active {
+  transform: scale(0.95); /* зменшення розміру при кліку */
+}
+
+/* To do Option 2  */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  transition: background-color 0.5s ease; /* Додано плавні переходи для зручності */
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  transition: background-color 0.5s ease; /* Додано плавні переходи для зручності */
+}
+.todo-app h2 {
+  color: #002765;
   display: flex;
   align-items: center;
-  box-shadow: 5px 5px 7px rgba(0,0,0,0.25);
-  margin: 0;
-  cursor: pointer;
-  font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.todo-app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+#input-box {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
   padding: 10px;
-  background:#1f83f2;
-  margin: 15px 0;
-  border-radius: 22.5px;;
-  min-height: 45px;
-
+}
+#todo-btn {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff5945;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
 }
 
-.box{
+#todo-btn:active {
+  transform: scale(0.95);
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 16px 8px 12px 30px;
+  user-select: none;
+  cursor: pointer;
   position: relative;
-  width: 450px;
-  height: 550px;
-
-  padding: 30px 50px;
-  background-color: beige;
-  box-shadow: 25px 25px 75px rgba(0,0,0,0.25),
-  10px 10px 70px rgba(0,0,0,0.25),
-  inset 5px 5px 10px rgba(0,0,0,0.5),
-  inset 5px 5px 10px rgba(255,255,255,0.2),
-  inset -5px -5px 15px rgba(0,0,0,0.75);
-
+  color: #666666;
 }
-.todo-header{
-  width: 100%;
-  font-weight: 600;
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: -12px;
+}
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before {
+  background-image: url(images/checked.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
   text-align: center;
-  font-size: 1.75em;
+  border-radius: 50%;
 }
-
-.to-dos {
-    margin-top: 25px;
+ul li span:hover {
+  background: #edeef0;
 }
