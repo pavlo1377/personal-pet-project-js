@@ -31,7 +31,7 @@ body {
   display: flex;
   text-align: center;
 }
-#focuser-icon-btn{
+#focuser-icon-btn {
   cursor: pointer;
   outline: none;
   border: none;
@@ -41,19 +41,15 @@ body {
 #moon-btn {
   border-radius: 30%;
   cursor: pointer;
-  
 }
 #sun-btn {
   border-radius: 30%;
   cursor: pointer;
-
-  
 }
 .btn-img {
   height: 30px;
   width: 30px;
 }
-
 
 .header-title {
   margin: auto; /* оновлено margin */
@@ -62,7 +58,7 @@ body {
   color: #333; /* колір тексту */
   margin-left: 20px;
 }
-.header-buttons{
+.header-buttons {
   margin-right: 20px;
 }
 
@@ -183,7 +179,7 @@ p {
   width: 100px;
 }
 
-.settings-btn-container{
+.settings-btn-container {
   grid-area: 1 / 5 / 1 / 5;
   top: 10px;
   right: -115px;
@@ -205,11 +201,10 @@ p {
   transform: scale(0.95);
 }
 
-#settings-icon{
+#settings-icon {
   width: 35px;
   height: 35px;
   object-fit: cover;
-  
 }
 #start-btn:hover {
   background-color: #45a049;
@@ -336,16 +331,14 @@ ul li span:hover {
   background: #edeef0;
 }
 
-
-
 /* Modal  */
-.modal-container{
-  background-color: rgba(0,0,0,0.3);
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,11 +346,11 @@ ul li span:hover {
   pointer-events: none;
   transition: opacity 0.3 ease;
 }
-.modal-container.show{
+.modal-container.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal{
+.modal {
   background-color: white;
   padding: 30px 50px;
   border-radius: 10px;
@@ -365,33 +358,54 @@ ul li span:hover {
   max-width: 100%;
   text-align: center;
 }
-.modal label{
+.modal label {
   font-size: 17px;
 }
-.modal input{
-  border-radius:5px;
+.modal input {
+  border-radius: 5px;
   height: 30px;
   font-size: 14px;
 }
-#modal-close-btn{
+#modal-close-btn {
   margin-top: 20px;
   padding: 10px;
   width: 100px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
-  background-color: #A9A9A9;
+  background-color: #a9a9a9;
   color: white;
 }
-#modal-apply-btn{
+#modal-apply-btn {
   margin-top: 20px;
   padding: 10px;
   width: 100px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   margin-left: 20px;
+}
 
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: ;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px;
+  width: 80px;
+  height: 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  bottom: 50px;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #3963e0;
 }

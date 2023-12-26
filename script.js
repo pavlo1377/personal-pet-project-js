@@ -193,16 +193,16 @@ modalApplyBtn.addEventListener("click", function () {
     breakMinutes <= 0
   ) {
     alert("You passed invalid value or did not fill both value fields!");
-    return;}
+    return;
+  }
 
-    wmin.innerText = padZero(workMinutes);
-    wsec.innerText = "00";
+  wmin.innerText = padZero(workMinutes);
+  wsec.innerText = "00";
 
-    bmin.innerText = padZero(breakMinutes);
-    bsec.innerText = "00";
+  bmin.innerText = padZero(breakMinutes);
+  bsec.innerText = "00";
 
-    counter.innerText = 0;
+  counter.innerText = 0;
 
-    modalContainer.classList.remove("show");
-  
+  modalContainer.classList.remove("show");
 });
