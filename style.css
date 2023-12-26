@@ -4,10 +4,10 @@ html {
 }
 
 body {
-  /* display: flex; */
+ 
   justify-content: center;
   align-items: center;
-  background-color: #ede6e6; /* змінено на нейтральний фоновий колір */
+  background-color: #ede6e6; 
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -19,7 +19,7 @@ body {
   width: 1000px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* оновлено на align-items */
+  align-items: center; 
   margin: 10px auto;
   border: 2px solid;
   border-radius: 40px;
@@ -52,10 +52,10 @@ body {
 }
 
 .header-title {
-  margin: auto; /* оновлено margin */
-  font-size: 18px; /* збільшено розмір шрифту */
+  margin: auto; 
+  font-size: 18px; 
   font-weight: bold;
-  color: #333; /* колір тексту */
+  color: #333;
   margin-left: 20px;
 }
 .header-buttons {
@@ -74,7 +74,6 @@ body {
   width: 950px;
   background-color: #fff;
   margin: 0 auto;
-  /* border: 5px solid #000; */
   border-radius: 20px;
   border: none;
   outline: none;
@@ -148,8 +147,8 @@ p {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: #4caf50; /* змінено на зелений */
-  color: #fff; /* білий текст для контрастності */
+  background-color: #4caf50; 
+  color: #fff; 
   transition: background-color 0.3s ease, transform 0.1s ease;
   height: 50px;
   width: 100px;
@@ -160,7 +159,7 @@ p {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: #3498db; /* змінено на синій */
+  background-color: #3498db; 
   color: #fff;
   transition: background-color 0.3s ease, transform 0.1s ease;
   height: 50px;
@@ -172,7 +171,7 @@ p {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: #e74c3c; /* змінено на червоний */
+  background-color: #e74c3c; 
   color: #fff;
   transition: background-color 0.3s ease, transform 0.1s ease;
   height: 50px;
@@ -186,7 +185,7 @@ p {
 }
 
 #settings-btn {
-  grid-area: 1 / 5 / 1 / 5; /* Place the button in the fifth column and first row */
+  grid-area: 1 / 5 / 1 / 5; 
   width: 50px;
   height: 50px;
   background-color: white;
@@ -221,15 +220,15 @@ p {
 #start-btn:active,
 #reset-btn:active,
 #stop-btn:active {
-  transform: scale(0.95); /* зменшення розміру при кліку */
+  transform: scale(0.95); 
 }
 
-/* To do Option 2  */
+/* To do Option */
 .container {
   width: 100%;
   min-height: 100vh;
   padding: 10px;
-  transition: background-color 0.5s ease; /* Додано плавні переходи для зручності */
+  transition: background-color 0.5s ease; 
 }
 
 .todo-app {
@@ -239,7 +238,7 @@ p {
   margin: 100px auto 20px;
   padding: 40px 30px 70px;
   border-radius: 10px;
-  transition: background-color 0.5s ease; /* Додано плавні переходи для зручності */
+  transition: background-color 0.5s ease; 
 }
 .todo-app h2 {
   color: #002765;
