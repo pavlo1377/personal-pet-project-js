@@ -1,4 +1,5 @@
 // Timer script
+
 const start = document.querySelector("#start-btn");
 const stop = document.querySelector("#stop-btn");
 const reset = document.querySelector("#reset-btn");
@@ -40,39 +41,44 @@ stop.addEventListener("click", function () {
 });
 
 function timer() {
-  //Work Timer Countdown
+  // Work Timer Countdown
   if (wsec.innerText != 0) {
-    wsec.innerText--;
+    wsec.innerText = padZero(parseInt(wsec.innerText) - 1);
   } else if (wmin.innerText != 0 && wsec.innerText == 0) {
     wsec.innerText = 59;
-    wmin.innerText--;
+    wmin.innerText = padZero(parseInt(wmin.innerText) - 1);
   }
 
-  //Break Timer Countdown
+  // Break Timer Countdown
   if (wmin.innerText == 0 && wsec.innerText == 0) {
     if (bsec.innerText != 0) {
-      bsec.innerText--;
+      bsec.innerText = padZero(parseInt(bsec.innerText) - 1);
     } else if (bmin.innerText != 0 && bsec.innerText == 0) {
       bsec.innerText = 59;
-      bmin.innerText--;
+      bmin.innerText = padZero(parseInt(bmin.innerText) - 1);
     }
   }
 
-  //Increment Counter by one if one full cycle is completed
+  // Increment Counter by one if one full cycle is completed
   if (
     wmin.innerText == 0 &&
     wsec.innerText == 0 &&
     bmin.innerText == 0 &&
     bsec.innerText == 0
   ) {
-    wmin.innerText = 25;
+    wmin.innerText = padZero(25);
     wsec.innerText = "00";
 
-    bmin.innerText = 5;
+    bmin.innerText = padZero(5);
     bsec.innerText = "00";
 
-    document.getElementById("counter").innerText++;
+    document.getElementById("counter").innerText =
+      parseInt(document.getElementById("counter").innerText) + 1;
   }
+}
+
+function padZero(value) {
+  return value < 10 ? "0" + value : value;
 }
 
 function stopInterval() {
@@ -91,6 +97,7 @@ const toDoContainer = document.querySelector("#toDo-container");
 const toDoTitle = document.querySelector("#toDo-title");
 const headerContainer = document.querySelector(".header-container");
 const headerTitle = document.querySelector(".header-title");
+const settingBtn = document.querySelector("#settings-btn");
 
 moonBtn.addEventListener("click", function () {
   document.body.style.backgroundColor = "#151111";
@@ -116,6 +123,8 @@ moonBtn.addEventListener("click", function () {
   headerContainer.style.backgroundColor = "#1c1b1b";
   headerTitle.style.color = "white";
   focuserIcon.style.backgroundColor = "#1c1b1b";
+
+  settingBtn.style.backgroundColor = "#1c1b1b";
 });
 
 // Sun button change
@@ -145,10 +154,55 @@ sunBtn.addEventListener("click", function () {
   headerContainer.style.backgroundColor = "#f0f0f0";
   headerTitle.style.color = "black";
   focuserIcon.style.backgroundColor = "#f0f0f0";
+
+  settingBtn.style.backgroundColor = "#fff";
 });
 
 // reload button
 const focuserIcon = document.querySelector("#focuser-icon-btn");
 focuserIcon.addEventListener("click", function () {
   window.location.reload();
+});
+
+// setting button and modal design
+
+const modalContainer = document.querySelector("#modal_container");
+const modalCloseBtn = document.querySelector("#modal-close-btn");
+
+const workMinutesInput = document.getElementById("set-wminutes");
+const breakMinutesInput = document.getElementById("set-bminutes");
+
+settingBtn.addEventListener("click", function () {
+  modalContainer.classList.add("show");
+});
+modalCloseBtn.addEventListener("click", function () {
+  modalContainer.classList.remove("show");
+});
+
+//  apply
+const modalApplyBtn = document.querySelector("#modal-apply-btn");
+
+modalApplyBtn.addEventListener("click", function () {
+  const workMinutes = parseInt(workMinutesInput.value);
+  const breakMinutes = parseInt(breakMinutesInput.value);
+
+  if (
+    isNaN(workMinutes) ||
+    isNaN(breakMinutes) ||
+    workMinutes <= 0 ||
+    breakMinutes <= 0
+  ) {
+    alert("You passed invalid value or did not fill both value fields!");
+    return;}
+
+    wmin.innerText = padZero(workMinutes);
+    wsec.innerText = "00";
+
+    bmin.innerText = padZero(breakMinutes);
+    bsec.innerText = "00";
+
+    counter.innerText = 0;
+
+    modalContainer.classList.remove("show");
+  
 });

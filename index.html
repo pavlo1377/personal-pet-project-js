@@ -9,17 +9,29 @@
   <body>
     <header class="header">
       <div class="header-container">
-        <div class="header-container_title"><h1 class="header-title">Welcome to focus</h1>
-          <button id="focuser-icon-btn"><img src="images/focuser-icon.png" alt="focuser-icon" class="focuser-icon"></button>
+        <div class="header-container_title">
+          <h1 class="header-title">Welcome to focus</h1>
+          <button id="focuser-icon-btn">
+            <img
+              src="images/focuser-icon.png"
+              alt="focuser-icon"
+              class="focuser-icon"
+            />
+          </button>
         </div>
-        <div class="header-buttons"><button id="moon-btn"><img class="btn-img" src="images/moon-icon.png" alt="moon-icon"></button>
-          <button id="sun-btn"><img class="btn-img" src="images/sun-icon.png" alt="sun-icon"></button>
+        <div class="header-buttons">
+          <button id="moon-btn">
+            <img class="btn-img" src="images/moon-icon.png" alt="moon-icon" />
+          </button>
+          <button id="sun-btn">
+            <img class="btn-img" src="images/sun-icon.png" alt="sun-icon" />
+          </button>
         </div>
       </div>
     </header>
     <main class="main">
       <!-- Titles -->
-      <div  id="main-container">
+      <div id="main-container">
         <p id="work" class="main-container_label">Work:</p>
         <p id="break" class="main-container_label">Break:</p>
         <p id="cycles" class="main-container_label">Cycles:</p>
@@ -43,12 +55,36 @@
         <button id="start-btn" class="main-btn">Start</button>
         <button id="stop-btn" class="main-btn">Stop</button>
         <button id="reset-btn" class="main-btn">Reset</button>
+
+        <div class="settings-btn-container">
+          <button id="settings-btn">
+            <img
+              src="images/settings-icon.png"
+              alt="settings-icon"
+              id="settings-icon"
+            />
+          </button>
+          <div class="modal-container" id="modal_container">
+            <div class="modal">
+              <h1>Timer settings</h1>
+              <label for="set-wminutes">Work Minutes:</label>
+              <input type="text" id="set-wminutes" />
+
+              <label for="set-bminutes">Break Minutes:</label>
+              <input type="text" id="set-bminutes" />
+              <button id="modal-close-btn">Close</button>
+              <button id="modal-apply-btn">Apply</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- To Do Option 2 -->
-      <div class="container" >
+      <div class="container">
         <div class="todo-app" id="toDo-container">
-          <h2 id="toDo-title">To-Do List <img src="images/icon.png" alt="icon" /></h2>
+          <h2 id="toDo-title">
+            To-Do List <img src="images/icon.png" alt="icon" />
+          </h2>
           <div class="row">
             <input
               type="text"
