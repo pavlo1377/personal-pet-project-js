@@ -98,6 +98,7 @@ const toDoTitle = document.querySelector("#toDo-title");
 const headerContainer = document.querySelector(".header-container");
 const headerTitle = document.querySelector(".header-title");
 const settingBtn = document.querySelector("#settings-btn");
+const footerLink = document.querySelector(".footer-link");
 
 moonBtn.addEventListener("click", function () {
   document.body.style.backgroundColor = "#151111";
@@ -125,6 +126,14 @@ moonBtn.addEventListener("click", function () {
   focuserIcon.style.backgroundColor = "#1c1b1b";
 
   settingBtn.style.backgroundColor = "#1c1b1b";
+  footerLink.style.backgroundColor = "#1c1b1b";
+  footerLink.style.color = "#fff";
+  footerLink.addEventListener("mouseover",function(){
+    footerLink.style.color ="#3963e0";
+  })
+  footerLink.addEventListener("mouseout",function(){
+    footerLink.style.color = "#fff";
+  })
 });
 
 // Sun button change
@@ -156,6 +165,11 @@ sunBtn.addEventListener("click", function () {
   focuserIcon.style.backgroundColor = "#f0f0f0";
 
   settingBtn.style.backgroundColor = "#fff";
+  footerLink.style.backgroundColor ="#fff";
+  footerLink.style.color = "black";
+  footerLink.addEventListener("mouseout",function(){
+    footerLink.style.color = "black";
+  })
 });
 
 // reload button
